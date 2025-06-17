@@ -3,9 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { ResponsiveLine } from "@nivo/line";
 import { useTheme, colors } from "@mui/material";
 import { tokens } from "../themes";
-import { CSVLink } from "react-csv";
-import DownloadIcon from "@mui/icons-material/Download";
-import IconButton from "@mui/material/IconButton";
 
 const TemLineGraph = () => {
   const theme = useTheme();
@@ -30,7 +27,7 @@ const TemLineGraph = () => {
 
       setData([
         {
-          id: "Average Temperature",
+          id: "Average Temp",
           data: tempData,
         },
       ]);
