@@ -1,4 +1,4 @@
-import { Box, useTheme, Typography, colors, IconButton } from "@mui/material";
+import { Box, useTheme, Typography, IconButton } from "@mui/material";
 import { tokens } from "../../themes";
 import Header from "../../components/Header";
 import StatBox from "../../components/StatBox";
@@ -151,6 +151,13 @@ const Dashboard = () => {
             <TemLineGraph />
           </Box>
         </Box>
+        <Box
+          gridColumn="span 4"
+          gridRow="span 3"
+          display="flex"
+          justifyContent="center"
+          backgroundColor={colors.primary[400]}
+        ></Box>
       </Box>
     </Box>
   );
