@@ -14,8 +14,9 @@ const TVOCGraph = () => {
   const colors = tokens(theme.palette.mode);
 
   const [data, setData] = useState([]);
+  const IP = process.env.REACT_APP_API_IP || "localhost";
   const getData = async () => {
-    await axios.get("http://localhost:8081/TVOCDatas").then((response) => {
+    await axios.get("http://" + IP + ":8081/TVOCDatas").then((response) => {
       setData(response.data);
     });
   };

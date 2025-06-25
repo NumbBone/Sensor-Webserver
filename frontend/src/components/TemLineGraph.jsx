@@ -5,6 +5,8 @@ import { useTheme, colors } from "@mui/material";
 import { tokens } from "../themes";
 
 const TemLineGraph = () => {
+  const IP = process.env.REACT_APP_API_IP || "localhost";
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -19,7 +21,7 @@ const TemLineGraph = () => {
     },
   ]);
   const getData = async () => {
-    await axios.get("http://localhost:8081/avrgTemp").then((response) => {
+    await axios.get("http://" + IP + ":8081/avrgTemp").then((response) => {
       const tempData = response.data.map((item) => ({
         x: item.dte_hour,
         y: item.avrgTemp,

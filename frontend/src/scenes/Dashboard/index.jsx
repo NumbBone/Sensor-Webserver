@@ -16,6 +16,8 @@ const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const IP = process.env.REACT_APP_API_IP || "localhost";
+
   const [data, setData] = useState([
     {
       avrgDailyTemp: "Loading",
@@ -27,13 +29,13 @@ const Dashboard = () => {
   const [csvData, setCsvData] = useState([]);
 
   const getData = async () => {
-    await axios.get("http://localhost:8081/DailyData").then((response) => {
+    await axios.get("http://" + IP + ":8081/DailyData").then((response) => {
       setData(response.data);
     });
   };
   useEffect(() => {
     getData();
-    axios.get("http://localhost:8081/avrgTemp").then((response) => {
+    axios.get("http://" + IP + ":8081/avrgTemp").then((response) => {
       setCsvData(response.data);
     });
   }, []);

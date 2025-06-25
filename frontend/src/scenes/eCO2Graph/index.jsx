@@ -13,9 +13,11 @@ const ECO2Graph = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const IP = process.env.REACT_APP_API_IP || "localhost";
+
   const [data, setData] = useState([]);
   const getData = async () => {
-    await axios.get("http://localhost:8081/eCO2Datas").then((response) => {
+    await axios.get("http://" + IP + ":8081/eCO2Datas").then((response) => {
       setData(response.data);
     });
   };

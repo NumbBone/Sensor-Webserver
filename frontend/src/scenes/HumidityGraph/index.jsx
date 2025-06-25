@@ -12,10 +12,11 @@ import IconButton from "@mui/material/IconButton";
 const HumidityGraph = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const IP = process.env.REACT_APP_API_IP || "localhost";
 
   const [data, setData] = useState([]);
   const getData = async () => {
-    await axios.get("http://localhost:8081/HumDatas").then((response) => {
+    await axios.get("http://" + IP + ":8081/HumDatas").then((response) => {
       setData(response.data);
     });
   };
