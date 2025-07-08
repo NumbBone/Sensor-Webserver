@@ -11,6 +11,7 @@ import axios from "axios";
 import TemLineGraph from "../../components/TemLineGraph";
 import DownloadIcon from "@mui/icons-material/Download";
 import { CSVLink } from "react-csv";
+import HumTable from "../../components/HumTable";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -159,7 +160,9 @@ const Dashboard = () => {
           display="flex"
           justifyContent="center"
           backgroundColor={colors.primary[400]}
-        ></Box>
+        >
+          <HumTable />
+        </Box>
       </Box>
     </Box>
   );
